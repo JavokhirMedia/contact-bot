@@ -64,7 +64,7 @@ class admin_reply_controller extends Controller
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
-
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_hello", text::getText("HELLO_ADMIN", $lang));
                 } elseif ($this->telegram->Text() == "/take_revenge") {
                     $this->telegram->sendMessage(
                         [
@@ -90,6 +90,7 @@ class admin_reply_controller extends Controller
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_revenge", text::getText("TAKE_REVENGE", $lang));
                 } elseif ($this->telegram->Text() == "/situation") {
                     $this->telegram->sendMessage(
                         [
@@ -115,6 +116,7 @@ class admin_reply_controller extends Controller
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_situation", text::getText("INQUIRE_ABOUT_SITUATION", $lang));
                 } elseif ($this->telegram->Text() == "/thank_you") {
                     $this->telegram->sendMessage(
                         [
@@ -140,6 +142,7 @@ class admin_reply_controller extends Controller
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_thank_you", text::getText("THANK_YOU_ADMIN", $lang));
                 } else {
                     $this->telegram->sendMessage(
                         [
@@ -165,6 +168,8 @@ class admin_reply_controller extends Controller
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
+
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_admin", $this->telegram->Text());
 
                 }
             } elseif ($this->telegram->getUpdateType() == "voice") {
@@ -193,7 +198,7 @@ class admin_reply_controller extends Controller
                         'reply_to_message_id' => $this->user_message_id,
                     ]
                 );
-
+                $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "voice", $this->telegram->voiceFileID());
             } elseif ($this->telegram->getUpdateType() == "photo") {
 
                 $this->telegram->sendMessage(
@@ -221,7 +226,7 @@ class admin_reply_controller extends Controller
                         'reply_to_message_id' => $this->user_message_id,
                     ]
                 );
-
+                $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "photo", $this->telegram->photoFileID());
             } elseif ($this->telegram->getUpdateType() == "video") {
 
                 $this->telegram->sendMessage(
@@ -244,11 +249,12 @@ class admin_reply_controller extends Controller
                 $this->telegram->sendVideo(
                     [
                         'chat_id' => $this->chat_id,
-                        'video' => $this->telegram->voiceFileID(),
+                        'video' => $this->telegram->videoFileID(),
                         'caption' => $this->telegram->Caption(),
                         'reply_to_message_id' => $this->user_message_id,
                     ]
                 );
+                $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "video", $this->telegram->videoFileID());
 
             }
 

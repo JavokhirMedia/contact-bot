@@ -11,9 +11,9 @@ class admin_reply_model extends Model
         $this->table = 'admin_replays';
     }
 
-    public function set()
+    public function set($chat_id, $from_id, $from_message_id, $type, $message_file_id): bool
     {
-
+        return $this->db->prepare("INSERT INTO `$this->table` (`user_id`, `from_chat_id`, `from_message_id`, `type`, `message_file_id`) VALUES ($chat_id, $from_id, $from_message_id, $type, $message_file_id)")->execute();
     }
 
 
