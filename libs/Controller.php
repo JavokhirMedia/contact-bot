@@ -11,7 +11,7 @@ class Controller
     /**
      * @var model
      */
-    public model|Session_Model $session;
+    public model $session;
 
     /**
      * @var mixed
