@@ -5,17 +5,17 @@ class send_message_controller extends Controller
     /**
      * @var model
      */
-    public mixed $model;
+    public $model;
 
     /**
      * @var send_message_controller
      */
-    public mixed $message_model;
+    public $message_model;
 
     /**
      * @var mixed
      */
-    public mixed $message_id;
+    public $message_id;
 
     function __construct()
     {

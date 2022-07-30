@@ -6,18 +6,19 @@ class Main
     /**
      * @var Telegram
      */
-    public Telegram $telegram;
+    public $telegram;
     /**
      * @var model
      */
-    public model $session;
+    public $session;
 
     function __construct()
     {
 
         $this->telegram = new Telegram();
-        require ("../models/session_model.php");
-        $this->session = new Session_Model();
+//        require "/models/session_model.php";
+//        echo file_exists("/models/session_model.php");
+//        $this->session = new Session_Model();
 
         $this->error("Salome");
 
@@ -36,13 +37,13 @@ class Main
             }
 
         }
-        else
-        {
-            $status = $this->session->get($this->telegram->ChatID());
-            require 'controllers/'. $status[0]["status"] .'_controller.php';
-            $sl_class = $status[0]["status"].'_controller';
-            $controller = new $sl_class;
-        }
+//        else
+//        {
+//            $status = $this->session->get($this->telegram->ChatID());
+//            require 'controllers/'. $status[0]["status"] .'_controller.php';
+//            $sl_class = $status[0]["status"].'_controller';
+//            $controller = new $sl_class;
+//        }
 
     }
 

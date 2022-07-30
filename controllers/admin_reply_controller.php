@@ -3,13 +3,13 @@
 class admin_reply_controller extends Controller
 {
 
-    public users_model $model;
-    public admin_reply_model $admin_reply_model;
-    public mixed $user_status;
-    public message_model $send_model;
-    public mixed $reply_message_id;
-    public array|bool $user_id;
-    public mixed $user_message_id;
+    public $model;
+    public $admin_reply_model;
+    public $user_status;
+    public $send_model;
+    public $reply_message_id;
+    public $user_id;
+    public $user_message_id;
 
     public function __construct()
     {

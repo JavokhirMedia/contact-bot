@@ -6,17 +6,17 @@ class Controller
     /**
      * @var Telegram
      */
-    public Telegram $telegram;
+    public $telegram;
 
     /**
      * @var model
      */
-    public model $session;
+    public $session;
 
     /**
      * @var mixed
      */
-    public mixed $chat_id;
+    public $chat_id;
 
     function __construct()
     {

@@ -3,7 +3,7 @@
 class admin_reply_model extends Model
 {
 
-    public string $table;
+    public $table;
 
     public function __construct()
     {
