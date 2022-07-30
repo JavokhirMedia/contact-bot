@@ -6,7 +6,7 @@ class Session_Model extends Model
     /**
      * @var string
      */
-    private $table;
+    private string $table;
 
     function __construct()
     {
@@ -31,7 +31,7 @@ class Session_Model extends Model
 
     /**
      * @param $chat_id
-     * @return array|false
+     * @return array
      */
     function get($chat_id): array
     {

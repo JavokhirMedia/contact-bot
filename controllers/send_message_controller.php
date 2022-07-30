@@ -22,9 +22,9 @@ class send_message_controller extends Controller
 
         parent::__construct();
 
-        require './models/users_model.php';
-        require './models/send_message_model.php';
-        require './config/text.php';
+        include './models/users_model.php';
+        include './models/send_message_model.php';
+        include './config/text.php';
 
         $this->model = new users_model();
         $this->message_id = $this->telegram->MessageID();
