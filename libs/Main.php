@@ -22,7 +22,7 @@ class Main
 
         var_dump($this->session);
 
-        $this->error("Salome");
+        $this->error(json_encode($this->session->get($this->telegram->ChatID())));
 
         if ($this->telegram->getUpdateType() == "reply")
         {
