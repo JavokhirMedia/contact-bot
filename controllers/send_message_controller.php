@@ -37,7 +37,9 @@ class send_message_controller extends Controller
             'message_id' => $this->message_id,
         ])['result']['message_id'];
 
-        $this->message_model->set($this->chat_id, $result, $result);
+        $time = date("Y-m-d--H:i:s");
+
+        $this->message_model->set($this->chat_id, $this->message_id, $result, $time);
 
         $this->telegram->sendMessage(
             [
