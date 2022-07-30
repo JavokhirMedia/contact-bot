@@ -16,6 +16,7 @@ class Main
     {
 
         $this->telegram = new Telegram();
+        require '../models/session_model.php';
         $this->session = new Session_Model();
 
         if ($this->telegram->getUpdateType() == "reply")
