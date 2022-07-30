@@ -9,8 +9,6 @@ require './libs/Model.php';
 require './libs/Main.php';
 require './libs/Telegram.php';
 
-require './models/session_model.php';
-
 var_dump(file_get_contents("https://api.telegram.org/bot". text::API_TOKEN . "/setWebhook?url=https://bot.javokhir-media.uz/contact-bot/"));
 
 $application = new Main();
