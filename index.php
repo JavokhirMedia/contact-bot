@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('Asia/Tashkent');
+
 require './config/database.php';
 require './config/telegram.php';
 require './config/text.php';
