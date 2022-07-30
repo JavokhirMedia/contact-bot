@@ -2,6 +2,7 @@
 
 require './config/database.php';
 require './config/telegram.php';
+require './config/text.php';
 
 require './libs/Controller.php';
 require './libs/Database.php';
