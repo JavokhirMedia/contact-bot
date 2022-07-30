@@ -16,20 +16,20 @@ class Main
     {
 
         $this->telegram = new Telegram();
-        include ("../models/session_model.php");
+        require ("../models/session_model.php");
         $this->session = new Session_Model();
 
         $this->error("Salome");
 
         if ($this->telegram->getUpdateType() == "reply")
         {
-            include 'controllers/admin_reply_controller.php';
+            require 'controllers/admin_reply_controller.php';
             $controller = new admin_reply_controller();
         }
         elseif ($this->telegram->IsBotCommand())
         {
             if ($this->telegram->Text() == '/start'){
-                include 'controllers/start_controller.php';
+                require 'controllers/start_controller.php';
                 $controller = new start();
             } else {
                 $this->error(ERROR_TEXT);
@@ -39,7 +39,7 @@ class Main
         else
         {
             $status = $this->session->get($this->telegram->ChatID());
-            include 'controllers/'. $status[0]["status"] .'_controller.php';
+            require 'controllers/'. $status[0]["status"] .'_controller.php';
             $sl_class = $status[0]["status"].'_controller';
             $controller = new $sl_class;
         }

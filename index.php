@@ -1,14 +1,14 @@
 <?php
 
-include './config/database.php';
-include './config/telegram.php';
-include './config/text.php';
+require './config/database.php';
+require './config/telegram.php';
+require './config/text.php';
 
-include './libs/Controller.php';
-include './libs/Database.php';
-include './libs/Model.php';
-include './libs/Main.php';
-include './libs/Telegram.php';
+require './libs/Controller.php';
+require './libs/Database.php';
+require './libs/Model.php';
+require './libs/Main.php';
+require './libs/Telegram.php';
 
 var_dump(file_get_contents("https://api.telegram.org/bot". text::API_TOKEN . "/setWebhook?url=https://bot.javokhir-media.uz/contact-bot/"));
 

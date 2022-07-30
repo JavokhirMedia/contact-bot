@@ -12,8 +12,8 @@ class start extends Controller
     {
         parent::__construct();
 
-        include './models/users_model.php';
-        include './config/text.php';
+        require './models/users_model.php';
+        require './config/text.php';
 
         $this->model = new users_model();
 
