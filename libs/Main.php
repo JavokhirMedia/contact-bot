@@ -16,9 +16,11 @@ class Main
     {
 
         $this->telegram = new Telegram();
-//        require "/models/session_model.php";
-//        echo file_exists("/models/session_model.php");
-//        $this->session = new Session_Model();
+
+        require "models/session_model.php";
+        $this->session = new Session_Model();
+
+        var_dump($this->session);
 
         $this->error("Salome");
 
@@ -37,13 +39,14 @@ class Main
             }
 
         }
-//        else
-//        {
+        elseif ($this->session->get($this->telegram->ChatID()) == "send_message")
+        {
 //            $status = $this->session->get($this->telegram->ChatID());
 //            require 'controllers/'. $status[0]["status"] .'_controller.php';
-//            $sl_class = $status[0]["status"].'_controller';
-//            $controller = new $sl_class;
-//        }
+            require 'controllers/send_message_controller.php';
+            $sl_class = 'send_message_controller';
+            $controller = new $sl_class;
+        }
 
     }
 

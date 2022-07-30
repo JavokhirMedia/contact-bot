@@ -54,7 +54,7 @@ class Telegram
     /**
      * Constant for type sticker.
      */
-    const STICKER = 'sticker';	
+    const STICKER = 'sticker';
     /**
      * Constant for type Document.
      */
@@ -87,7 +87,7 @@ class Telegram
      * \param $proxy array with the proxy configuration (url, port, type, auth)
      * \return an instance of the class.
      */
-    public function __construct($bot_token = token, $log_errors = true, array $proxy = [])
+    public function __construct($bot_token = text::API_TOKEN, $log_errors = true, array $proxy = [])
     {
         $this->bot_token = $bot_token;
         $this->data = $this->getData();
@@ -153,7 +153,7 @@ class Telegram
     {
         return $this->endpoint('copyMessage', $content);
     }
-    
+
     /// Send a Poll
 
     public function sendPoll(array $content)
@@ -163,7 +163,7 @@ class Telegram
 
     /// Forward a message
 
-  
+
     public function forwardMessage(array $content)
     {
         return $this->endpoint('forwardMessage', $content);
@@ -171,7 +171,7 @@ class Telegram
 
     /// Send a photo
 
-    
+
     public function sendPhoto(array $content)
     {
         return $this->endpoint('sendPhoto', $content);
@@ -179,7 +179,7 @@ class Telegram
 
     /// Send an audio
 
-    
+
     public function sendAudio(array $content)
     {
         return $this->endpoint('sendAudio', $content);
@@ -187,23 +187,23 @@ class Telegram
 
     /// Send a document
 
-    
+
     public function sendDocument(array $content)
     {
         return $this->endpoint('sendDocument', $content);
     }
-	
+
     /// Send an animation
 
-   
+
     public function sendAnimation(array $content)
     {
         return $this->endpoint('sendAnimation', $content);
-    }	
+    }
 
     /// Send a sticker
 
-    
+
     public function sendSticker(array $content)
     {
         return $this->endpoint('sendSticker', $content);
@@ -211,7 +211,7 @@ class Telegram
 
     /// Send a video
 
-    
+
     public function sendVideo(array $content)
     {
         return $this->endpoint('sendVideo', $content);
@@ -219,7 +219,7 @@ class Telegram
 
     /// Send a voice message
 
-    
+
     public function sendVoice(array $content)
     {
         return $this->endpoint('sendVoice', $content);
@@ -227,7 +227,7 @@ class Telegram
 
     /// Send a location
 
-   
+
     public function sendLocation(array $content)
     {
         return $this->endpoint('sendLocation', $content);
@@ -235,7 +235,7 @@ class Telegram
 
     /// Edit Message Live Location
 
-    
+
     public function editMessageLiveLocation(array $content)
     {
         return $this->endpoint('editMessageLiveLocation', $content);
@@ -243,7 +243,7 @@ class Telegram
 
     /// Stop Message Live Location
 
-    
+
     public function stopMessageLiveLocation(array $content)
     {
         return $this->endpoint('stopMessageLiveLocation', $content);
@@ -251,7 +251,7 @@ class Telegram
 
     /// Set Chat Sticker Set
 
-    
+
     public function setChatStickerSet(array $content)
     {
         return $this->endpoint('setChatStickerSet', $content);
@@ -259,7 +259,7 @@ class Telegram
 
     /// Delete Chat Sticker Set
 
-    
+
     public function deleteChatStickerSet(array $content)
     {
         return $this->endpoint('deleteChatStickerSet', $content);
@@ -267,7 +267,7 @@ class Telegram
 
     /// Send Media Group
 
-    
+
     public function sendMediaGroup(array $content)
     {
         return $this->endpoint('sendMediaGroup', $content);
@@ -275,14 +275,14 @@ class Telegram
 
     /// Send Venue
 
-    
+
     public function sendVenue(array $content)
     {
         return $this->endpoint('sendVenue', $content);
     }
 
     //Send contact
-    
+
     public function sendContact(array $content)
     {
         return $this->endpoint('sendContact', $content);
@@ -290,7 +290,7 @@ class Telegram
 
     /// Send a chat action
 
-    
+
     public function sendChatAction(array $content)
     {
         return $this->endpoint('sendChatAction', $content);
@@ -298,7 +298,7 @@ class Telegram
 
     /// Get a list of profile pictures for a user
 
-    
+
     public function getUserProfilePhotos(array $content)
     {
         return $this->endpoint('getUserProfilePhotos', $content);
@@ -320,7 +320,7 @@ class Telegram
 
     /// Kick Chat Member
 
-    
+
     public function kickChatMember(array $content)
     {
         return $this->endpoint('kickChatMember', $content);
@@ -328,7 +328,7 @@ class Telegram
 
     /// Leave Chat
 
-    
+
     public function leaveChat(array $content)
     {
         return $this->endpoint('leaveChat', $content);
@@ -336,7 +336,7 @@ class Telegram
 
     /// Unban Chat Member
 
-    
+
     public function unbanChatMember(array $content)
     {
         return $this->endpoint('unbanChatMember', $content);
@@ -344,31 +344,31 @@ class Telegram
 
     /// Get Chat Information
 
-    
+
     public function getChat(array $content)
     {
         return $this->endpoint('getChat', $content);
     }
 
-    
+
     public function getChatAdministrators(array $content)
     {
         return $this->endpoint('getChatAdministrators', $content);
     }
 
-    
+
     public function getChatMembersCount(array $content)
     {
         return $this->endpoint('getChatMembersCount', $content);
     }
 
-    
+
     public function getChatMember(array $content)
     {
         return $this->endpoint('getChatMember', $content);
     }
 
-    
+
     public function answerInlineQuery(array $content)
     {
         return $this->endpoint('answerInlineQuery', $content);
@@ -376,7 +376,7 @@ class Telegram
 
     /// Set Game Score
 
-    
+
     public function setGameScore(array $content)
     {
         return $this->endpoint('setGameScore', $content);
@@ -384,25 +384,25 @@ class Telegram
 
     /// Answer a callback Query
 
-    
+
     public function answerCallbackQuery(array $content)
     {
         return $this->endpoint('answerCallbackQuery', $content);
     }
 
-    
+
     public function editMessageText(array $content)
     {
         return $this->endpoint('editMessageText', $content);
     }
 
-    
+
     public function editMessageCaption(array $content)
     {
         return $this->endpoint('editMessageCaption', $content);
     }
 
-    
+
     public function editMessageReplyMarkup(array $content)
     {
         return $this->endpoint('editMessageReplyMarkup', $content);
@@ -505,11 +505,11 @@ class Telegram
 
     public function Caption()
     {
-	$type = $this->getUpdateType(); 
-	if ($type == self::CHANNEL_POST) { 
-		return @$this->data['channel_post']['caption']; 
-	} 
-	return @$this->data['message']['caption']; 
+        $type = $this->getUpdateType();
+        if ($type == self::CHANNEL_POST) {
+            return @$this->data['channel_post']['caption'];
+        }
+        return @$this->data['message']['caption'];
     }
 
     /// Get the chat_id of the current message
@@ -945,7 +945,7 @@ class Telegram
     // Payments
     /// Send an invoice
 
-    
+
     public function sendInvoice(array $content)
     {
         return $this->endpoint('sendInvoice', $content);
@@ -953,7 +953,7 @@ class Telegram
 
     /// Answer a shipping query
 
-    
+
     public function answerShippingQuery(array $content)
     {
         return $this->endpoint('answerShippingQuery', $content);
@@ -961,7 +961,7 @@ class Telegram
 
     /// Answer a PreCheckout query
 
-    
+
     public function answerPreCheckoutQuery(array $content)
     {
         return $this->endpoint('answerPreCheckoutQuery', $content);
@@ -969,7 +969,7 @@ class Telegram
 
     /// Send a video note
 
-    
+
     public function sendVideoNote(array $content)
     {
         return $this->endpoint('sendVideoNote', $content);
@@ -977,7 +977,7 @@ class Telegram
 
     /// Restrict Chat Member
 
-    
+
     public function restrictChatMember(array $content)
     {
         return $this->endpoint('restrictChatMember', $content);
@@ -985,7 +985,7 @@ class Telegram
 
     /// Promote Chat Member
 
-    
+
     public function promoteChatMember(array $content)
     {
         return $this->endpoint('promoteChatMember', $content);
@@ -993,7 +993,7 @@ class Telegram
 
     //// Export Chat Invite Link
 
-    
+
     public function exportChatInviteLink(array $content)
     {
         return $this->endpoint('exportChatInviteLink', $content);
@@ -1001,7 +1001,7 @@ class Telegram
 
     /// Set Chat Photo
 
-    
+
     public function setChatPhoto(array $content)
     {
         return $this->endpoint('setChatPhoto', $content);
@@ -1009,7 +1009,7 @@ class Telegram
 
     /// Delete Chat Photo
 
-    
+
     public function deleteChatPhoto(array $content)
     {
         return $this->endpoint('deleteChatPhoto', $content);
@@ -1017,7 +1017,7 @@ class Telegram
 
     /// Set Chat Title
 
-    
+
     public function setChatTitle(array $content)
     {
         return $this->endpoint('setChatTitle', $content);
@@ -1025,7 +1025,7 @@ class Telegram
 
     /// Set Chat Description
 
-    
+
     public function setChatDescription(array $content)
     {
         return $this->endpoint('setChatDescription', $content);
@@ -1033,7 +1033,7 @@ class Telegram
 
     /// Pin Chat Message
 
-    
+
     public function pinChatMessage(array $content)
     {
         return $this->endpoint('pinChatMessage', $content);
@@ -1041,7 +1041,7 @@ class Telegram
 
     /// Unpin Chat Message
 
-   
+
     public function unpinChatMessage(array $content)
     {
         return $this->endpoint('unpinChatMessage', $content);
@@ -1049,7 +1049,7 @@ class Telegram
 
     /// Get Sticker Set
 
-    
+
     public function getStickerSet(array $content)
     {
         return $this->endpoint('getStickerSet', $content);
@@ -1057,7 +1057,7 @@ class Telegram
 
     /// Upload Sticker File
 
-    
+
     public function uploadStickerFile(array $content)
     {
         return $this->endpoint('uploadStickerFile', $content);
@@ -1065,7 +1065,7 @@ class Telegram
 
     /// Create New Sticker Set
 
-    
+
     public function createNewStickerSet(array $content)
     {
         return $this->endpoint('createNewStickerSet', $content);
@@ -1073,7 +1073,7 @@ class Telegram
 
     /// Add Sticker To Set
 
-    
+
     public function addStickerToSet(array $content)
     {
         return $this->endpoint('addStickerToSet', $content);
@@ -1081,7 +1081,7 @@ class Telegram
 
     /// Set Sticker Position In Set
 
-    
+
     public function setStickerPositionInSet(array $content)
     {
         return $this->endpoint('setStickerPositionInSet', $content);
@@ -1089,7 +1089,7 @@ class Telegram
 
     /// Delete Sticker From Set
 
-    
+
     public function deleteStickerFromSet(array $content)
     {
         return $this->endpoint('deleteStickerFromSet', $content);
@@ -1097,7 +1097,7 @@ class Telegram
 
     /// Delete a message
 
-    
+
     public function deleteMessage(array $content)
     {
         return $this->endpoint('deleteMessage', $content);
@@ -1183,9 +1183,9 @@ class Telegram
         if (isset($update['message']['animation'])) {
             return self::ANIMATION;
         }
-	if (isset($update['message']['sticker'])) {
+        if (isset($update['message']['sticker'])) {
             return self::STICKER;
-        }	    
+        }
         if (isset($update['message']['document'])) {
             return self::DOCUMENT;
         }
@@ -1196,7 +1196,7 @@ class Telegram
         return false;
     }
 
-    private function sendAPIRequest($url, array $content, $post = true)
+    private function sendAPIRequest($url, array $content, $post = true): bool|string
     {
         if (isset($content['chat_id'])) {
             $url = $url.'?chat_id='.$content['chat_id'];
@@ -1250,10 +1250,10 @@ class Telegram
 
 // Helper for Uploading file using CURL
 if (!function_exists('curl_file_create')) {
-    function curl_file_create($filename, $mimetype = '', $postname = '')
+    function curl_file_create($filename, $mimetype = '', $postname = ''): string
     {
         return "@$filename;filename="
-        .($postname ?: basename($filename))
-        .($mimetype ? ";type=$mimetype" : '');
+            .($postname ?: basename($filename))
+            .($mimetype ? ";type=$mimetype" : '');
     }
 }
