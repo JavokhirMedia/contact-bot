@@ -60,11 +60,11 @@ class admin_reply_controller extends Controller
                     $this->telegram->sendMessage(
                         [
                             'chat_id' => $this->user_id,
-                            'text' => text::getText("HELLO_ADMIN", $lang),
+                            'text' => sendText::getText("HELLO_ADMIN", $lang),
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
-                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_hello", text::getText("HELLO_ADMIN", $lang));
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_hello", sendText::getText("HELLO_ADMIN", $lang));
                 } elseif ($this->telegram->Text() == "/take_revenge") {
                     $this->telegram->sendMessage(
                         [
@@ -86,11 +86,11 @@ class admin_reply_controller extends Controller
                     $this->telegram->sendMessage(
                         [
                             'chat_id' => $this->user_id,
-                            'text' => text::getText("TAKE_REVENGE", $lang),
+                            'text' => sendText::getText("TAKE_REVENGE", $lang),
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
-                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_revenge", text::getText("TAKE_REVENGE", $lang));
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_revenge", sendText::getText("TAKE_REVENGE", $lang));
                 } elseif ($this->telegram->Text() == "/situation") {
                     $this->telegram->sendMessage(
                         [
@@ -112,11 +112,11 @@ class admin_reply_controller extends Controller
                     $this->telegram->sendMessage(
                         [
                             'chat_id' => $this->user_id,
-                            'text' => text::getText("INQUIRE_ABOUT_SITUATION", $lang),
+                            'text' => sendText::getText("INQUIRE_ABOUT_SITUATION", $lang),
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
-                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_situation", text::getText("INQUIRE_ABOUT_SITUATION", $lang));
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_situation", sendText::getText("INQUIRE_ABOUT_SITUATION", $lang));
                 } elseif ($this->telegram->Text() == "/thank_you") {
                     $this->telegram->sendMessage(
                         [
@@ -138,11 +138,11 @@ class admin_reply_controller extends Controller
                     $this->telegram->sendMessage(
                         [
                             'chat_id' => $this->user_id,
-                            'text' => text::getText("THANK_YOU_ADMIN", $lang),
+                            'text' => sendText::getText("THANK_YOU_ADMIN", $lang),
                             'reply_to_message_id' => $this->user_message_id,
                         ]
                     );
-                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_thank_you", text::getText("THANK_YOU_ADMIN", $lang));
+                    $this->admin_reply_model->set($this->chat_id, $this->user_id, $this->user_message_id, "text_thank_you", sendText::getText("THANK_YOU_ADMIN", $lang));
                 } else {
                     $this->telegram->sendMessage(
                         [

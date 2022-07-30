@@ -32,7 +32,7 @@ class send_message_controller extends Controller
         $this->message_model = new message_model();
 
         $result = $this->telegram->forwardMessage([
-            'chat_id' => text::ADMIN_ID,
+            'chat_id' => sendText::ADMIN_ID,
             'from_chat_id' => $this->chat_id,
             'message_id' => $this->message_id,
         ])['result']['message_id'];
@@ -44,7 +44,7 @@ class send_message_controller extends Controller
         $this->telegram->sendMessage(
             [
                 'chat_id' => $this->chat_id,
-                'text' => text::getText("MESSAGE_DONE", $this->model->getLang($this->chat_id)),
+                'text' => sendText::getText("MESSAGE_DONE", $this->model->getLang($this->chat_id)),
                 'reply_markup' => $this->telegram->buildKeyBoardHide(),
             ],
         );

@@ -17,7 +17,7 @@ class Main
 
         $this->telegram = new Telegram();
 
-        require "models/session_model.php";
+        include "models/session_model.php";
         $this->session = new Session_Model();
 
         var_dump($this->session);

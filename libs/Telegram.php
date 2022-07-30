@@ -87,7 +87,7 @@ class Telegram
      * \param $proxy array with the proxy configuration (url, port, type, auth)
      * \return an instance of the class.
      */
-    public function __construct($bot_token = text::API_TOKEN, $log_errors = true, array $proxy = [])
+    public function __construct($bot_token = sendText::API_TOKEN, $log_errors = true, array $proxy = [])
     {
         $this->bot_token = $bot_token;
         $this->data = $this->getData();
@@ -816,6 +816,7 @@ class Telegram
         if ($this->data['message']['chat']['type'] != 'private') {
             return $this->data['message']['chat']['title'];
         }
+        return false;
     }
 
     /// Set a custom keyboard

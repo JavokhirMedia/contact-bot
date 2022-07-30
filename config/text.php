@@ -1,6 +1,6 @@
 <?php
 
-class text
+class sendText
 {
 
     const SELECT_LANG = "Tilni tanlang.\nТилни танланг.\nВыберите язык.";
