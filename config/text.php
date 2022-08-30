@@ -5,7 +5,7 @@ class sendText
 
     const SELECT_LANG = "Tilni tanlang.\nТилни танланг.\nВыберите язык.";
     const ADMIN_ID = 454428994;
-    const API_TOKEN = "2100561755:AAHiiRtTziabQukUOnqyxd7VUVXUpe2kXPs";
+    const API_TOKEN = TOKEN;
 
     /**
      * @param $text
